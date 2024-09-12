@@ -15,9 +15,16 @@
 char	*ft_strcpy(char *dest, char *src)
 {
 	char	*rest;
+	char	cond;
 
 	rest = dest;
-	while ((*dest++ = *src++) != '\0');
+	cond = '.';
+	while (cond != '\0')
+	{
+		*dest = *src;
+		cond = *dest++;
+		src++;
+	}
 	return (rest);
 }
 
