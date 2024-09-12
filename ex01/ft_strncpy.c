@@ -15,8 +15,7 @@
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int	i;
-	// int	j;
-	char	*rest;
+	char			*rest;
 
 	rest = dest;
 	i = 0;
