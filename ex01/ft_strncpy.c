@@ -15,26 +15,29 @@
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int	i;
-	char		*rest;
+	// int	j;
+	char	*rest;
 
 	rest = dest;
 	i = 0;
-	while ((i < n) && ((*dest++ = *src++) != '\0'))
+	while (i < n && src[i] != '\0')
+	{
+		dest[i] = src[i];
 		i++;
+	}
 	if (i >= n)
-		*dest = '\0';
+		dest[i] = '\0';
 	return (rest);
 }
 
 // int	main(void)
 // {
 // 	char	*src;
-// 	char	dest[20];
+// 	char	dest[30];
 // 	char	*rest;
 //
 // 	src = "hello world hello world hello world";
-// 	printf("src: %s\n", src);
-// 	rest = ft_strncpy(dest, src, 8);
-// 	// ft_strncpy(dest, src, 2);
-// 	printf("src: %s, dest: %s, rest: %s\n", src, dest, rest);
+// 	printf("src : %s\n", src);
+// 	rest = ft_strncpy(dest, src, 20);
+// 	printf("src : %s\ndest: %s\nrest: %s\n", src, dest, rest);
 // }
