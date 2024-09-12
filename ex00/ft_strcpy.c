@@ -6,16 +6,14 @@
 /*   By: elagouch <erwann.lagouche@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 10:54:25 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/12 14:42:44 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/12 20:34:01 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-
 char	*ft_strcpy(char *dest, char *src)
 {
-	int	i;
 	char	*rest;
+	int		i;
 
 	rest = dest;
 	i = 0;
