@@ -12,7 +12,7 @@
 
 // #include <stdio.h>
 
-int	ft_str_is_alpha(char *str)
+int	ft_str_is_numeric(char *str)
 {
 	int	i;
 
@@ -28,8 +28,8 @@ int	ft_str_is_alpha(char *str)
 
 // int	main(void)
 // {
-// 	printf("%d\n", ft_str_is_alpha("hello"));
-// 	printf("%d\n", ft_str_is_alpha("hello world 123"));
-// 	printf("%d\n", ft_str_is_alpha("1"));
-// 	printf("%d\n", ft_str_is_alpha(""));
+// 	printf("%d\n", ft_str_is_numeric("hello"));
+// 	printf("%d\n", ft_str_is_numeric("hello world 123"));
+// 	printf("%d\n", ft_str_is_numeric("1"));
+// 	printf("%d\n", ft_str_is_numeric(""));
 // }
