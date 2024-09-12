@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_is_numeric.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elagouch <erwann.lagouche@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 20:25:38 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/12 20:26:03 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/12 20:50:26 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_str_is_alpha(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if ((str[i] < 'A' || str[i] > 'Z') && (str[i] < 'a' || str[i] > 'z'))
+		if (str[i] < '0' || str[i] > '9')
 			return (0);
 		i++;
 	}
@@ -29,9 +29,7 @@ int	ft_str_is_alpha(char *str)
 // int	main(void)
 // {
 // 	printf("%d\n", ft_str_is_alpha("hello"));
-// 	printf("%d\n", ft_str_is_alpha("hello world"));
-// 	printf("%d\n", ft_str_is_alpha(" "));
-// 	printf("%d\n", ft_str_is_alpha("]"));
-// 	printf("%d\n", ft_str_is_alpha("a"));
+// 	printf("%d\n", ft_str_is_alpha("hello world 123"));
+// 	printf("%d\n", ft_str_is_alpha("1"));
 // 	printf("%d\n", ft_str_is_alpha(""));
 // }
