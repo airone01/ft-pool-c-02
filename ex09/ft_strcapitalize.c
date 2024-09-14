@@ -56,7 +56,8 @@ char	*ft_strcapitalize(char *str)
 
 // int	main(void)
 // {
-// 	char	entry[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
+// 	char	entry[] = "salut, comment tu vas ?
+// 		42mots quarante-deux; cinquante+et+un";
 // 	char	*res;
 //
 // 	res = ft_strcapitalize (entry);
