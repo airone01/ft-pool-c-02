@@ -41,7 +41,7 @@ char	*ft_strcapitalize(char *str)
 	prev = ' ';
 	while (str[i] != '\0')
 	{
-		if (is_alphanum(str[i]) == 1 && wchar(prev) == 0 && in_word == 0)
+		if (is_alphanum(str[i]) == 1 && is_alphanum(prev) == 0 && in_word == 0)
 		{
 			in_word = 1;
 			str[i] = capital(str[i]);
@@ -57,7 +57,7 @@ char	*ft_strcapitalize(char *str)
 // int	main(void)
 // {
 // 	char	entry[] = "salut, comment tu vas ?
-//		42mots quarante-deux; cinquante+et+un";
+// 		42mots quarante-deux; cinquante+et+un";
 // 	char	*res;
 //
 // 	printf("entry: \"%s\"\n", entry);
