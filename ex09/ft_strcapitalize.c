@@ -6,13 +6,13 @@
 /*   By: elagouch <erwann.lagouche@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 11:33:00 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/13 13:53:45 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/15 16:15:22 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
 
-int	wchar(char str)
+int	is_alphanum(char str)
 {
 	if ((str >= '0' && str <= '9')
 		|| (str >= 'A' && str <= 'Z')
@@ -41,12 +41,12 @@ char	*ft_strcapitalize(char *str)
 	prev = ' ';
 	while (str[i] != '\0')
 	{
-		if (wchar(str[i]) == 1 && wchar(prev) == 0 && in_word == 0)
+		if (is_alphanum(str[i]) == 1 && wchar(prev) == 0 && in_word == 0)
 		{
 			in_word = 1;
 			str[i] = capital(str[i]);
 		}
-		else if (wchar(str[i]) == 0 && in_word == 1)
+		else if (is_alphanum(str[i]) == 0 && in_word == 1)
 			in_word = 0;
 		prev = str[i];
 		i++;
@@ -57,10 +57,10 @@ char	*ft_strcapitalize(char *str)
 // int	main(void)
 // {
 // 	char	entry[] = "salut, comment tu vas ?
-// 		42mots quarante-deux; cinquante+et+un";
+//		42mots quarante-deux; cinquante+et+un";
 // 	char	*res;
 //
+// 	printf("entry: \"%s\"\n", entry);
 // 	res = ft_strcapitalize (entry);
-// 	printf("%s\n", entry);
-// 	printf("%s\n", res);
+// 	printf("entry: \"%s\"\nres  : \"%s\"\n", entry, res);
 // }
