@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// #include <stdio.h>
+
 char	*ft_strcpy(char *dest, char *src)
 {
-	char	*rest;
 	int		i;
 
-	rest = dest;
 	i = 0;
 	while (src[i] != '\0')
 	{
@@ -23,7 +23,7 @@ char	*ft_strcpy(char *dest, char *src)
 		i++;
 	}
 	dest[i] = '\0';
-	return (rest);
+	return (dest);
 }
 
 // int	main(void)
@@ -32,7 +32,7 @@ char	*ft_strcpy(char *dest, char *src)
 // 	char	dest[10];
 // 	char	*rest;
 //
-// 	src = "hello";
+// 	src = "hi";
 // 	printf("src: %s\n", src);
 // 	rest = ft_strcpy(dest, src);
 // 	printf("src: %s, dest: %s, rest: %s\n", src, dest, rest);
