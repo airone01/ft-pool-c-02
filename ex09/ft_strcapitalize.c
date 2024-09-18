@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+// #include <stdio.h>
 
 int	is_alphanum(char str)
 {
@@ -69,12 +69,12 @@ char	*ft_strcapitalize(char *str)
 	return (str);
 }
 
-int	main(void)
-{
-	char	entry[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
-	char	*res;
-
-	printf("entry: \"%s\"\n", entry);
-	res = ft_strcapitalize (entry);
-	printf("entry: \"%s\"\nres  : \"%s\"\n", entry, res);
-}
+// int	main(void)
+// {
+// 	char	entry[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
+// 	char	*res;
+//
+// 	printf("entry: \"%s\"\n", entry);
+// 	res = ft_strcapitalize (entry);
+// 	printf("entry: \"%s\"\nres  : \"%s\"\n", entry, res);
+// }
