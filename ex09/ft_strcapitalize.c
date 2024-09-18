@@ -42,8 +42,6 @@ int	lcase(char str)
 char	*ft_strcapitalize(char *str)
 {
 	int		i;
-	int		in_word;
-	char	prev;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -52,18 +50,12 @@ char	*ft_strcapitalize(char *str)
 		i++;
 	}
 	i = 0;
-	in_word = 0;
-	prev = ' ';
+	if (is_alphanum(str[0]))
+		str[i] = ucase(str[i]);
 	while (str[i] != '\0')
 	{
-		if (is_alphanum(str[i]) == 1 && is_alphanum(prev) == 0 && in_word == 0)
-		{
-			in_word = 1;
+		if (is_alphanum(str[i]) && !is_alphanum(str[i - 1]))
 			str[i] = ucase(str[i]);
-		}
-		else if (is_alphanum(str[i]) == 0 && in_word == 1)
-			in_word = 0;
-		prev = str[i];
 		i++;
 	}
 	return (str);
@@ -71,7 +63,8 @@ char	*ft_strcapitalize(char *str)
 
 // int	main(void)
 // {
-// 	char	entry[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
+// 	char	entry[] = "salut, comment tu vas ?
+// 		42mots quarante-deux; cinquante+et+un";
 // 	char	*res;
 //
 // 	printf("entry: \"%s\"\n", entry);
