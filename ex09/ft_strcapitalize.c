@@ -6,11 +6,11 @@
 /*   By: elagouch <erwann.lagouche@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 11:33:00 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/15 16:15:22 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/18 08:40:54 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
+#include <stdio.h>
 
 int	is_alphanum(char str)
 {
@@ -21,12 +21,21 @@ int	is_alphanum(char str)
 	return (0);
 }
 
-int	capital(char str)
+int	ucase(char str)
 {
 	const char	offset = 'a' - 'A';
 
 	if (str >= 'a' && str <= 'z')
 		return (str - offset);
+	return (str);
+}
+
+int	lcase(char str)
+{
+	const char	offset = 'a' - 'A';
+
+	if (str >= 'A' && str <= 'Z')
+		return (str + offset);
 	return (str);
 }
 
@@ -37,6 +46,12 @@ char	*ft_strcapitalize(char *str)
 	char	prev;
 
 	i = 0;
+	while (str[i] != '\0')
+	{
+		str[i] = lcase(str[i]);
+		i++;
+	}
+	i = 0;
 	in_word = 0;
 	prev = ' ';
 	while (str[i] != '\0')
@@ -44,7 +59,7 @@ char	*ft_strcapitalize(char *str)
 		if (is_alphanum(str[i]) == 1 && is_alphanum(prev) == 0 && in_word == 0)
 		{
 			in_word = 1;
-			str[i] = capital(str[i]);
+			str[i] = ucase(str[i]);
 		}
 		else if (is_alphanum(str[i]) == 0 && in_word == 1)
 			in_word = 0;
@@ -54,13 +69,12 @@ char	*ft_strcapitalize(char *str)
 	return (str);
 }
 
-// int	main(void)
-// {
-// 	char	entry[] = "salut, comment tu vas ?
-// 		42mots quarante-deux; cinquante+et+un";
-// 	char	*res;
-//
-// 	printf("entry: \"%s\"\n", entry);
-// 	res = ft_strcapitalize (entry);
-// 	printf("entry: \"%s\"\nres  : \"%s\"\n", entry, res);
-// }
+int	main(void)
+{
+	char	entry[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
+	char	*res;
+
+	printf("entry: \"%s\"\n", entry);
+	res = ft_strcapitalize (entry);
+	printf("entry: \"%s\"\nres  : \"%s\"\n", entry, res);
+}
