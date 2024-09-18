@@ -18,18 +18,6 @@ void	ft_putchar(char c)
 	write (1, &c, 1);
 }
 
-// Print hexadecimal char* from integer
-void	puth(int nbr)
-{
-	if (nbr >= 16)
-	{
-		puth (nbr / 16);
-		ft_putchar ("0123456789abcdef"[nbr % 16]);
-		return ;
-	}
-	ft_putchar ("0123456789abcdef"[nbr % 16]);
-}
-
 void	ft_putstr_non_printable(char *str)
 {
 	if (*str == '\0')
@@ -37,8 +25,8 @@ void	ft_putstr_non_printable(char *str)
 	if (*str < ' ' || *str > '~')
 	{
 		ft_putchar ('\\');
-		if (((int) *str) < 16)
-			ft_putchar ('0');
+		ft_putchar ("0123456789abcdef"[nbr / 16]);
+		ft_putchar ("0123456789abcdef"[nbr % 16]);
 		puth ((int) *str);
 	}
 	else
