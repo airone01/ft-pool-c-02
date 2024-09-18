@@ -6,7 +6,7 @@
 /*   By: elagouch <erwann.lagouche@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 10:54:25 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/12 19:18:21 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/18 20:33:09 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,11 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		dest[i] = src[i];
 		i++;
 	}
-	if (i < n)
+	while (i < n)
+	{
 		dest[i] = '\0';
+		i++;
+	}
 	return (dest);
 }
 
